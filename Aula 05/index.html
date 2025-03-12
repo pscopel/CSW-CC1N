@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+</head>
+<body>
+    <h2>4 FERRAMENTAS TI UTILIZADAS NA BIBLIOTECA ANA BOVE</h2>
+    <h3>4.1 Sobre a Biblioteca Ana Bove e sua instituição mantenedora</h2>
+    <h4>4.1.1 O Imip</h4>
+    <h4>4.1.2 A Biblioteca Ana Bove</h4>
+    <h3>4.2 Diagnóstico tecnológico da Biblioteca Ana Bove</h3>
+    <h4>4.2.1 Catálogo automático</h4>
+    <h4>4.2.2 Repositório Institucional</h4>
+    <h4>4.2.3 Portal e/ou base de dados de informação científica</h4>
+    <h4>4.2.4 Website (site)</h4>
+    <h4>4.2.5 Redes sociais</h4>
+    <h4>4.2.6 Outras ferramentas</h4>
+    <br>
+    <hr>
+    <h1>PRINCIPAIS FORMATAÇÕES</h2>
+    <h2><b>Negrito /</b> <strong>Destaque</strong></h2>
+    <h4>Esta frase contém </b>negrito.</b></h4>
+    <h4>Está frase contém <strong>destaque</strong></h4>
+    <br>
+    <h2><i>Itálico /</i> <em>Ênfase</em></h2>
+    <h4><i>Está frase está em Itálico</i></h4>
+    <h4><em>Está frase está com Ênfase</em></h4>
+    <br>
+    <h2><mark>Texto Marcado</mark></h2>
+    <hr><mark>Está frase está marcada</mark>
+    <h4><mark style="background:green"> Está frase está marcada</mark></h4>
+    <br>
+    <h2><big>Grande</big> e <small>Pequeno</small></h2>
+    <h4><big>Está frase está grande</big></h4>
+    <h4><small>Está frase está pequena</small></h4>
+    <br>
+    <h2><strike>Deletado</strike> e <del>Riscado</del> </h2>
+    <h4><strike>Está frase está deletada</strike></h4>
+    <h4><del>Está frase está riscada</del></h4>
+    <br>
+    <h2><u>Inserido</u> e <ins>Sublinhado</ins></h2>
+    <h4><u>Está frasa está Inserida</u></h4>
+    <h4><ins>Está frase está sublinhada</ins></h4>
+    <br>
+    <h2><sup>Texto sobrescrito</sup></h2>
+    <h4><sup>Está frase está sobrescrita</sup></h4>
+    <br>
+    <h2><sub>Texto subscrito</sub></h2>
+    <h4><sub>Está frase está subscrito.</sub></h4>
+    <br>
+    <h2>Treco de Código Fonte</h2>
+    <pre>class Outliner:
+        def __init__(self):
+            self.outline = {}
+    
+        def add_topic(self, topic, parent=None):
+            if parent is None:
+                self.outline[topic] = []
+            else:
+                if parent in self.outline:
+                    self.outline[parent].append(topic)
+                else:
+                    print(f"O tópico '{parent}' não existe!")
+    
+        def remove_topic(self, topic):
+            if topic in self.outline:
+                del self.outline[topic]
+                for parent, subtopics in self.outline.items():
+                    if topic in subtopics:
+                        subtopics.remove(topic)
+            else:
+                print(f"O tópico '{topic}' não existe!")
+    
+        def display(self, outline=None, level=0):
+            if outline is None:
+                outline = self.outline
+            for topic, subtopics in outline.items():
+                print("  " * level + f"- {topic}")
+                if subtopics:
+                    self.display(dict.fromkeys(subtopics), level + 1)
+    
+    # Exemplo de uso
+    outliner = Outliner()
+    
+    # Adicionando tópicos
+    outliner.add_topic("Projeto")
+    outliner.add_topic("Introdução", "Projeto")
+    outliner.add_topic("Objetivos", "Projeto")
+    outliner.add_topic("Metodologia", "Projeto")
+    outliner.add_topic("Desenvolvimento", "Objetivos")
+    
+    # Exibindo o outliner
+    outliner.display()
+    
+    # Removendo um tópico
+    outliner.remove_topic("Objetivos")
+    
+    # Exibindo novamente após remoção
+    print("\nApós remover 'Objetivos':")
+    outliner.display()</code>
+
+</body>
+</html>
